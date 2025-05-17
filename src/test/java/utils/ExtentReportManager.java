@@ -27,7 +27,7 @@ public class ExtentReportManager {
             // Crea una nueva instancia de ExtentReports y adjunta el reporter configurado
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
-            extent.setSystemInfo("Pryecto", "Automatizacion_Amazon_carrito_compras");
+            extent.setSystemInfo("Proyecto", "Automatizacion_Amazon_carrito_compras");
             extent.setSystemInfo("Tester", "Diana_Medina");
         }
         return extent;

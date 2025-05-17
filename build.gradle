@@ -35,14 +35,20 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
     testImplementation("io.cucumber:cucumber-junit:7.22.0")
-   
 
+    // ExtentReports: herramienta para generar reportes HTML con resultados visuales y detallados de pruebas
     testImplementation("com.aventstack:extentreports:5.1.1")
 
+    // Commons Codec: biblioteca para codificación/decodificación (por ejemplo, Base64)
     testImplementation("commons-codec:commons-codec:1.15")
+
+    // Adaptador para integrar ExtentReports con Cucumber versión 7
     testImplementation ("tech.grasshopper:extentreports-cucumber7-adapter:1.7.0")
+
+    //ExtentReports para asegurarse de que esté disponible
     testImplementation ("com.aventstack:extentreports:5.1.1")
-    testImplementation ("com.google.protobuf:protobuf-java:3.21.12")
+
+    
 
 }
 

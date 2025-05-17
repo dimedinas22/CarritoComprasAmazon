@@ -30,13 +30,16 @@ public class Hooks {
     @After
     public void teardown(Scenario scenario) {
         ExtentTest test = ExtentTestManager.getTest();
-        if (scenario.isFailed()) {
+        // Captura de pantalla
         byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         String base64Screenshot = java.util.Base64.getEncoder().encodeToString(screenshot);
-        test.fail("El escenario falló, captura adjunta")
-            .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot fallo");
+
+        if (scenario.isFailed()) {
+            test.fail("El escenario falló, captura adjunta")
+                .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot fallo");
         } else {
-        test.pass("Escenario exitoso");
+            test.pass("Escenario exitoso")
+                .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot Éxito");
         }
         ExtentReportManager.getInstance().flush();
         ExtentTestManager.unload();
