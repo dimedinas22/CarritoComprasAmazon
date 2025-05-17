@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import utils.DriverFactory;
 import utils.ExtentReportManager;
+import utils.ExtentTestManager;
 
 public class Hooks {
 
@@ -21,22 +22,24 @@ public class Hooks {
     @Before
     public void setup(Scenario scenario) {
         driver = DriverFactory.getDriver();
-        extent = ExtentReportManager.getInstance();  // Usa tu clase utilitaria
-        test = extent.createTest(scenario.getName());
+        ExtentReports extent = ExtentReportManager.getInstance();
+        ExtentTest test = extent.createTest(scenario.getName());
+        ExtentTestManager.setTest(test);
     }
 
     @After
     public void teardown(Scenario scenario) {
+        ExtentTest test = ExtentTestManager.getTest();
         if (scenario.isFailed()) {
-            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            String base64Screenshot = java.util.Base64.getEncoder().encodeToString(screenshot);
-            test.fail("El escenario falló, captura adjunta")
-                .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot fallo");
+        byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        String base64Screenshot = java.util.Base64.getEncoder().encodeToString(screenshot);
+        test.fail("El escenario falló, captura adjunta")
+            .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot fallo");
         } else {
-            test.pass("Escenario exitoso");
+        test.pass("Escenario exitoso");
         }
-
-        extent.flush(); // Guarda el reporte
+        ExtentReportManager.getInstance().flush();
+        ExtentTestManager.unload();
         DriverFactory.quitDriver();
     }
 }

@@ -1,9 +1,12 @@
 package pages;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
 import java.util.ArrayList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,6 +35,14 @@ public class AmazonSearchPage extends BasePage {
         navegarA("https://www.amazon.com/-/es");
         driver.manage().addCookie(new Cookie("lc-main", "en_ES"));
         driver.navigate().refresh();
+    }
+    //Detiene tiempo de ejecucion para resolver chaptcha manualmente
+    public void resolverchaptchat() {
+        try {
+            Thread.sleep(15000); //pausa de 15 segundos
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     
       // Escribe el criterio de busqueda en el cuadro
@@ -73,7 +84,7 @@ public class AmazonSearchPage extends BasePage {
         return valores;
     } catch (Exception e) {
         // Si ocurre algún error (por ejemplo, no se encuentra el dropdown), lanza una excepción
-        throw new RuntimeException("No se pudo obtener la lista de cantidades disponibles.", e);
+        throw new RuntimeException("No se pudo obtener la lista de cantidades disponibles por falta de stock.", e);
     }
     }
     // Método que selecciona una cantidad específica si está disponible
@@ -92,11 +103,19 @@ public class AmazonSearchPage extends BasePage {
         }
     }
      // Agrega el producto seleccionado al carrito de compras
-    public void agregaralcarrito(){
-        clickElement(agregarcarrito);
+    public void agregaralcarrito() {
+    try {
 
+        // Hacer clic en el botón
+        clickElement(agregarcarrito);
+        
+    } catch (Exception e) {
+        System.out.println("No se puede agregar al carrito porque no hay unidades disponibles ");
+    }
     }
 }
+
+
 
 
 

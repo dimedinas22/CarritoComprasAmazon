@@ -35,10 +35,14 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
     testImplementation("io.cucumber:cucumber-junit:7.22.0")
+   
 
-    testImplementation('com.aventstack:extentreports:5.1.1')
+    testImplementation("com.aventstack:extentreports:5.1.1")
 
-    testImplementation('commons-codec:commons-codec:1.15')
+    testImplementation("commons-codec:commons-codec:1.15")
+    testImplementation ("tech.grasshopper:extentreports-cucumber7-adapter:1.7.0")
+    testImplementation ("com.aventstack:extentreports:5.1.1")
+    testImplementation ("com.google.protobuf:protobuf-java:3.21.12")
 
 }
 
