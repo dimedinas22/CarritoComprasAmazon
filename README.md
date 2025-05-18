@@ -108,7 +108,7 @@ cd CarritoComprasAmazon
 Para ejecutar las pruebas automatizadas, utiliza el siguiente comando en la terminal: gradle test
 
 ### 📁 Estructura del Proyecto
-
+```text
 CarritoComprasAmazon/
 ├── .gradle/ # Archivos internos generados automáticamente por Gradle
 ├── .vscode/ # Configuraciones específicas para Visual Studio Code
