@@ -7,11 +7,12 @@ Feature: Test Pagina Amazon Carrito de Compras
         When busca un <producto>
         And Navega a la segunda Pagina
         And Selecciona el tercer item
-        Then agrega al carrito dos o mas unidades del tercer item si esta disponible para compra
+        Then agrega al carrito <cantidad> unidades del tercer item si esta disponible para compra
 
         Examples:
 
-            |producto |
-            |alexa   |
-            |xbox |
+            |producto |cantidad |
+            |alexa    |2        |
+            |bluetooth|3        |
+            
             

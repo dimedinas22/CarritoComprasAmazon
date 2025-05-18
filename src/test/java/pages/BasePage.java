@@ -2,6 +2,9 @@ package pages;
 
 // Importaciones necesarias
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -79,14 +82,10 @@ public class BasePage {
         Find(element).clear();
         Find(element).sendKeys(escribirBusqueda);
     }
-    
-    // Método para hacer clic en un elemento específico usando un XPath fijo (por ejemplo, un título)
-    public void hacerClickEnElementoEspecifico() {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[4]/div[1]/div[1]/span[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/h2[1]/span[1]")));
-        element.click();
-    }
+
     // Método que devuelve el texto visible de un elemento WebElement recibido como parámetro
     public String textFromElement(WebElement element) {
     return element.getText();
     }
+
 }

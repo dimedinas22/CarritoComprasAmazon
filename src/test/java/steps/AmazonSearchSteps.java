@@ -36,9 +36,9 @@ public class AmazonSearchSteps {
         amazon.seleccionarTercerElemento();
         ExtentTestManager.getTest().log(Status.INFO, "Selecciona el tercer producto");
     }
-    @Then("agrega al carrito dos o mas unidades del tercer item si esta disponible para compra")
-    public void agregaUnidadesSiDisponibles() {
-        amazon.seleccionarCantidadSiDisponible(3);
+    @Then("agrega al carrito {int} unidades del tercer item si esta disponible para compra")
+    public void agregaUnidadesSiDisponibles(int cantidad) {
+        amazon.seleccionarCantidadSiDisponible(cantidad);
         amazon.agregaralcarrito();
         ExtentTestManager.getTest().log(Status.INFO, "Intenta agregar 2 o más unidades al carrito si está disponible");
 }

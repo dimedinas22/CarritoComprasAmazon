@@ -19,7 +19,7 @@ public class AmazonSearchPage extends BasePage {
      // Boton para ejecutar la busqueda
     private Element botonBusqueda =new Element ("css","#nav-search-submit-button");
      // Elemento que representa el tercer resultado de busqueda
-    private Element tercerResultado =new Element ("xpath","/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[4]/div[1]/div[1]/span[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/h2[1]/span[1]");
+    private Element tercerResultado =new Element ("xpath","(//div[@data-cy='title-recipe']/a)[3]");
     // Selector desplegable para elegir cantidad a comprar
     private Element cantidadcompra= new Element("xpath","//span[@id='a-autoid-0-announce']");
     // Boton para agregar el producto al carrito
@@ -62,8 +62,7 @@ public class AmazonSearchPage extends BasePage {
     public void seleccionarTercerElemento(){
         clickElement(tercerResultado);
     }
-
-    // Método que retorna la lista de cantidades disponibles en el desplegable
+     // Método que retorna la lista de cantidades disponibles en el desplegable
     public List<String> retornarCantidadCompra() {
     try {
         // Hace clic en el selector de cantidad
@@ -87,7 +86,7 @@ public class AmazonSearchPage extends BasePage {
         throw new RuntimeException("No se pudo obtener la lista de cantidades disponibles por falta de stock.", e);
     }
     }
-    // Método que selecciona una cantidad específica si está disponible
+     // Método que selecciona una cantidad específica si está disponible
     public void seleccionarCantidadSiDisponible(int cantidadDeseada) {
         // Obtiene la lista de cantidades disponibles
         List<String> cantidades = retornarCantidadCompra();

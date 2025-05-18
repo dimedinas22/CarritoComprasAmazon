@@ -38,7 +38,7 @@ public class Hooks {
             test.fail("El escenario falló, captura adjunta")
                 .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot fallo");
         } else {
-            test.pass("Escenario exitoso")
+            test.pass("Escenario exitoso, captura adjunta")
                 .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot Éxito");
         }
         ExtentReportManager.getInstance().flush();
