@@ -6,7 +6,7 @@
 ### 🧪 Descripción del Proyecto
 
 Este proyecto consiste en replicar un escenario de prueba automatizado sobre el sitio web de Amazon.com, utilizando Selenium WebDriver, Cucumber y Gradle. El flujo automatiza una búsqueda de “Productos", navega a la segunda página de resultados y, si el tercer producto está disponible, agrega dos o más unidades al carrito de compras.
-
+```text
 Criterios de aceptacion
 Escenario - Cargar al carrito de compra un producto encontrado a través de búsqueda con nombre del artículo
 Dado - el usuario navega en www.amazon.com
