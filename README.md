@@ -8,11 +8,11 @@
 Este proyecto consiste en replicar un escenario de prueba automatizado sobre el sitio web de Amazon.com, utilizando Selenium WebDriver, Cucumber y Gradle. El flujo automatiza una búsqueda de “Productos", navega a la segunda página de resultados y, si el tercer producto está disponible, agrega dos o más unidades al carrito de compras.
 
 Criterios de aceptacion
-Escenario - Cargar al carrito de compra un producto encontrado a través de búsqueda con nombre del artículo
-Dado - el usuario navega en www.amazon.com
-Cuando - busca el artículo "Alexa"
-Y - navega a la página 2 de los resultados de búsqueda obtenidos
-Y - selecciona el tercer ítem de los resultados 
+Escenario - Cargar al carrito de compra un producto encontrado a través de búsqueda con nombre del artículo  
+Dado - el usuario navega en www.amazon.com  
+Cuando - busca el artículo "Alexa"  
+Y - navega a la página 2 de los resultados de búsqueda   obtenidos  
+Y - selecciona el tercer ítem de los resultados   
 Entonces - agrega al carrito más de dos unidades del tercer ítem si esta disponible para compra.
 
 ### ¿Qué es Selenium WebDriver?
@@ -25,13 +25,6 @@ Cucumber es una herramienta BDD que permite escribir pruebas en lenguaje natural
 
 ### ¿Qué es Gradle?
 Gradle es una herramienta de automatización que facilita la gestión de dependencias, construcción y ejecución del proyecto.
-
-
-
-
-
-
-
 
 
 ## 🧰 Herramientas y Versiones Usadas
@@ -68,13 +61,13 @@ Agrega la ruta del directorio bin de Gradle a la variable de entorno PATH.
 Después de la instalación, abre una terminal o CMD y ejecuta: gradle --version
 
 ### Extensiones de VS code
-Para este proyecto se utilizaron alguna extensiones de VS Code que ayudan a . Las extensiones que vamos a descargar son:
+Para este proyecto se utilizaron alguna extensiones de VS Code que ayudan a la escritura, organización y ejecución de pruebas automatizadas, especialmente para trabajar con Java, Gradle y Cucumber. Las extensiones que vamos a descargar son:
 
-Extension Pack for Java
-Gradle for Java
-Gradle Language Support
-Cucumber
-Snippets and Syntax Highlight for Gherkin (Cucumber)
+Extension Pack for Java  
+Gradle for Java  
+Gradle Language Support  
+Cucumber  
+Snippets and Syntax Highlight for Gherkin (Cucumber)  
 
 ###  Dependencias
 
@@ -98,7 +91,7 @@ Asegurarse de que la versión del navegador sea compatible con el ChromeDriver u
 
 1.Clona el repositorio:
 git clone https://github.com/dimedinas22/CarritoComprasAmazon.git
-cd CarritoComprasAmazon
+cd CarritoComprasAmazon  
 2.Asegúrate de tener el WebDriver correspondiente a tu navegador en el sistema y que su ruta esté configurada en las variables de entorno.
 
 
