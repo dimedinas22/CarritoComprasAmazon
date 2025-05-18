@@ -110,24 +110,28 @@ Para ejecutar las pruebas automatizadas, utiliza el siguiente comando en la term
 ### 📁 Estructura del Proyecto
 ```text
 CarritoComprasAmazon/
-├── .gradle/ # Archivos internos generados automáticamente por Gradle
-├── .vscode/ # Configuraciones específicas para Visual Studio Code
-├── build/ # Carpeta generada por Gradle con los archivos compilados y reportes
-├── reports/ # Reportes generados por las pruebas automatizadas (ExtentReports, Cucumber)
+├── .gradle/                        # Archivos internos generados por Gradle
+├── .vscode/                        # Configuraciones del entorno en Visual Studio Code
+├── bin/                            # Archivos compilados (opcional)
+├── build/                          # Carpeta de salida generada por Gradle
+├── gradle/                         # Archivos internos de configuración de Gradle
+├── reports/                        # Reportes generados por la ejecución de pruebas
 ├── src/
-│ └── test/
-│ ├── java/
-│ │ └── [paquete base]/
-│ │ ├── pages/ # Clases Page Object para interactuar con la UI
-│ │ ├── runner/ # Clases que ejecutan los tests con Cucumber y JUnit
-│ │ ├── steps/ # Implementación de los pasos (steps) de los escenarios Cucumber
-│ │ └── utils/ # Clases utilitarias para manejo de drivers, reportes, configuraciones, etc.
-│ └── resources/
-│ ├── features/ # Archivos .feature con escenarios en lenguaje Gherkin
-│ └── cucumber.properties # Configuraciones de Cucumber
-├── build.gradle # Script principal de Gradle para gestionar dependencias y tareas
-├── gradlew # Wrapper de Gradle para sistemas Unix (Linux/Mac)
-├── gradlew.bat # Wrapper de Gradle para Windows
-├── settings.gradle # Configuración general del proyecto Gradle
-├── .gitignore # Archivos y carpetas ignoradas por Git
-└── README.md # Documentación y guía del proyecto
+│   └── test/
+│       ├── java/
+│       │   └── [paquete base]/
+│       │       ├── pages/          # Clases del patrón Page Object
+│       │       ├── runner/         # Runner de Cucumber (con JUnit)
+│       │       ├── steps/          # Definición de pasos de Cucumber
+│       │       └── utils/          # Utilidades auxiliares 
+│       └── resources/
+│           ├── features/           # Escenarios definidos en Gherkin (.feature)
+│           │   └── AmazonSearch.feature
+│           └── cucumber.properties # Configuraciones específicas de Cucumber
+├── target/                         # Carpeta generada durante la compilación
+├── .gitattributes                  # Reglas para el tratamiento de archivos en Git
+├── .gitignore                      # Archivos y carpetas que se excluyen del control de versiones
+├── build.gradle                    # Script principal de construcción del proyecto con Gradle
+├── gradlew                         # Script para usar el wrapper de Gradle (Linux/macOS)
+├── gradlew.bat                     # Script para usar el wrapper de Gradle (Windows)
+└── settings.gradle                 # Configuración de módulos del proyecto
