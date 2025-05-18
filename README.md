@@ -6,7 +6,7 @@
 ### 🧪 Descripción del Proyecto
 
 Este proyecto consiste en replicar un escenario de prueba automatizado sobre el sitio web de Amazon.com, utilizando Selenium WebDriver, Cucumber y Gradle. El flujo automatiza una búsqueda de “Productos", navega a la segunda página de resultados y, si el tercer producto está disponible, agrega dos o más unidades al carrito de compras.
-```text
+
 Criterios de aceptacion
 Escenario - Cargar al carrito de compra un producto encontrado a través de búsqueda con nombre del artículo
 Dado - el usuario navega en www.amazon.com
@@ -14,7 +14,7 @@ Cuando - busca el artículo "Alexa"
 Y - navega a la página 2 de los resultados de búsqueda obtenidos
 Y - selecciona el tercer ítem de los resultados 
 Entonces - agrega al carrito más de dos unidades del tercer ítem si esta disponible para compra.
-```text
+
 ### ¿Qué es Selenium WebDriver?
 
 Selenium WebDriver es una colección de APIs utilizadas para automatizar la interacción con navegadores web. Permite simular las acciones de un usuario real para validar funcionalidades en aplicaciones web.
