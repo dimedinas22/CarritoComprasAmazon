@@ -12,7 +12,7 @@ Feature: Test Pagina Amazon Carrito de Compras
         Examples:
 
             |producto |cantidad |
-            |alexa    |2        |
-            |bluetooh |3        |
+            |Alexa   |2        |
+            |Bluetooh|3        |
             
             

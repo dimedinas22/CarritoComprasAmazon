@@ -11,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import io.cucumber.java.ro.Si;
+
 // Clase que representa la pagina de busqueda de Amazon
 public class AmazonSearchPage extends BasePage {
 
@@ -65,45 +67,20 @@ public class AmazonSearchPage extends BasePage {
     public void seleccionarTercerElemento(){
         clickElement(tercerResultado);
     }
-     // Método que retorna la lista de cantidades disponibles en el desplegable
-    public List<String> retornarCantidadCompra() {
-    try {
-        // Hace clic en el selector de cantidad
-        clickElement(cantidadcompra);
-        // Espera a que el listado de opciones sea visible
-        wait.until(ExpectedConditions.visibilityOfElementLocated(
-            By.xpath("//ul[contains(@class,'a-nostyle')]/li/a")));
-        // Obtiene todos los elementos <a> que representan las opciones de cantidad
-        List<WebElement> opciones = driver.findElements(
-            By.xpath("//ul[contains(@class,'a-nostyle')]/li/a"));
-        // Lista para almacenar los textos de cada opción
-        List<String> valores = new ArrayList<>();
-        // Recorre las opciones y añade su texto a la lista
-        for (WebElement opcion : opciones) {
-            valores.add(opcion.getText().trim());
-        }
-        // Devuelve la lista de cantidades disponibles
-        return valores;
-    } catch (Exception e) {
-        // Si ocurre algún error (por ejemplo, no se encuentra el dropdown), lanza una excepción
-        throw new RuntimeException("No se pudo obtener la lista de cantidades disponibles por falta de stock.", e);
-    }
-    }
-     // Método que selecciona una cantidad específica si está disponible
+     // Selecciona la cantidad de producto a agregar al carrito
     public void seleccionarCantidadSiDisponible(int cantidadDeseada) {
-        // Obtiene la lista de cantidades disponibles
-        List<String> cantidades = retornarCantidadCompra();
-        // Verifica si la cantidad deseada está entre las opciones disponibles
-        if (cantidades.contains(String.valueOf(cantidadDeseada))) {
-            // Si está disponible, localiza y hace clic en esa opción
-            WebElement opcion = driver.findElement(
-                By.xpath("//a[normalize-space(text())='" + cantidadDeseada + "']"));
-            opcion.click();
-        } else {
-            // Si no está disponible, imprime un mensaje informando al usuario
-            System.out.println("No hay " + cantidadDeseada + " unidades disponibles.");
-        }
+    // Obtiene la lista de cantidades disponibles desde el menú desplegable
+    List<String> cantidades = obtenerOpcionesDeDropdown(
+        cantidadcompra, "//ul[contains(@class,'a-nostyle')]/li/a");
+    // Verifica si la cantidad deseada se encuentra en la lista de opciones
+    if (cantidades.contains(String.valueOf(cantidadDeseada))) {
+    // Si está disponible, selecciona la opción correspondiente haciendo clic en ella
+        seleccionarOpcionEnDropdown(String.valueOf(cantidadDeseada));
+    } else {
+    // Si no está disponible, informa al usuario por consola
+        System.out.println("No hay " + cantidadDeseada + " unidades disponibles.");
     }
+}
      // Agrega el producto seleccionado al carrito de compras
     public void agregaralcarrito() {
     try {
