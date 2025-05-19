@@ -13,6 +13,6 @@ Feature: Test Pagina Amazon Carrito de Compras
 
             |producto |cantidad |
             |alexa    |2        |
-            |bluetooth|3        |
+            |bluetooh |3        |
             
             

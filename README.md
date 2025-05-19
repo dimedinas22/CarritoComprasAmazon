@@ -1,6 +1,5 @@
 
 
-
 ## Desafío 1: Replica Escenario De Prueba Con Selenium Y Cucumber
 
 ### 🧪 Descripción del Proyecto
@@ -128,3 +127,5 @@ CarritoComprasAmazon/
 ├── gradlew                         # Script para usar el wrapper de Gradle (Linux/macOS)
 ├── gradlew.bat                     # Script para usar el wrapper de Gradle (Windows)
 └── settings.gradle                 # Configuración de módulos del proyecto
+
+

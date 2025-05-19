@@ -14,11 +14,11 @@ import utils.ExtentReportManager;
 import utils.ExtentTestManager;
 
 public class Hooks {
-
-    private static ExtentReports extent;
-    private static ExtentTest test;
+    
+    
     private WebDriver driver;
 
+    // Método que se ejecuta antes de cada escenario
     @Before
     public void setup(Scenario scenario) {
         driver = DriverFactory.getDriver();
@@ -27,6 +27,7 @@ public class Hooks {
         ExtentTestManager.setTest(test);
     }
 
+    // Método que se ejecuta después de cada escenario
     @After
     public void teardown(Scenario scenario) {
         ExtentTest test = ExtentTestManager.getTest();
@@ -41,6 +42,7 @@ public class Hooks {
             test.pass("Escenario exitoso, captura adjunta")
                 .addScreenCaptureFromBase64String(base64Screenshot, "Screenshot Éxito");
         }
+        // Se finaliza y escribe el reporte
         ExtentReportManager.getInstance().flush();
         ExtentTestManager.unload();
         DriverFactory.quitDriver();

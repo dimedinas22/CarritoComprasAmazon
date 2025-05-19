@@ -40,6 +40,7 @@ public class AmazonSearchSteps {
     public void agregaUnidadesSiDisponibles(int cantidad) {
         amazon.seleccionarCantidadSiDisponible(cantidad);
         amazon.agregaralcarrito();
+        Assert.assertEquals("Agregado al carrito", amazon.mensajeagregadocarrito());
         ExtentTestManager.getTest().log(Status.INFO, "Intenta agregar 2 o más unidades al carrito si está disponible");
 }
 }

@@ -84,8 +84,8 @@ public class BasePage {
     }
 
     // Método que devuelve el texto visible de un elemento WebElement recibido como parámetro
-    public String textFromElement(WebElement element) {
-    return element.getText();
+    public String textFromElement(Element element) {
+    return Find(element).getText();
     }
 
 }

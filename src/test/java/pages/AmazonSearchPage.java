@@ -24,6 +24,9 @@ public class AmazonSearchPage extends BasePage {
     private Element cantidadcompra= new Element("xpath","//span[@id='a-autoid-0-announce']");
     // Boton para agregar el producto al carrito
     private Element agregarcarrito= new Element ("id","add-to-cart-button");
+    // Boton para verificar el mensaje de Agregado al carrito
+    private Element validarmensaje = new Element ("xpath","//*[contains(text(),'Agregado al carrito')]");
+    
     
 
     public AmazonSearchPage(WebDriver driver){
@@ -111,6 +114,10 @@ public class AmazonSearchPage extends BasePage {
     } catch (Exception e) {
         System.out.println("No se puede agregar al carrito porque no hay unidades disponibles ");
     }
+    }
+    //Valida Mensaje de Agregado al carrito
+    public String mensajeagregadocarrito(){
+        return textFromElement(validarmensaje);
     }
 }
 
