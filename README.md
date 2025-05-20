@@ -102,6 +102,13 @@ Para ejecutar las pruebas automatizadas, utiliza el siguiente comando en la term
 ### 📊 Visualización de reportes
 Después de ejecutar las pruebas, abre el archivo HTML generado en la carpeta /reports para revisar los resultados detallados de cada caso.  
 Los resultados también se suben automáticamente a Cucumber Reports, permitiendo revisar los escenarios desde cualquier dispositivo con acceso web.
+Para generar y publicar reportes en Cucumber, se utiliza una variable de entorno llamada CUCUMBER_PUBLISH_TOKEN. Este token es proporcionado por la plataforma de Cucumber Reports, y permite que los resultados de tus pruebas se suban y se visualicen en línea.
+
+#### Pasos para generar el reporte:
+
+1. Primero, debes registrarte o iniciar sesión en https://reports.cucumber.io/ para obtener tu token personal.
+2. Una vez que tengas el token, debes configurarlo como una variable de entorno en tu sistema. Esto se puede hacer ejecutando el siguiente comando en la terminal : export CUCUMBER_PUBLISH_TOKEN=some-secret-token (reemplazar el some-secret-token por el token que les dio Cucumber)
+
 
 #### Reporte generado Ejemplo:
 Este reporte muestra la ejecucion de un caso exitoso y un caso fallido debido la falta de stock del producto 
