@@ -99,6 +99,31 @@ cd CarritoComprasAmazon
 
 Para ejecutar las pruebas automatizadas, utiliza el siguiente comando en la terminal: gradle test
 
+### 📊 Visualización de reportes
+Después de ejecutar las pruebas, abre el archivo HTML generado en la carpeta /reports para revisar los resultados detallados de cada caso.  
+Los resultados también se suben automáticamente a Cucumber Reports, permitiendo revisar los escenarios desde cualquier dispositivo con acceso web.
+
+#### Reporte generado Ejemplo:
+Este reporte muestra la ejecucion de un caso exitoso y un caso fallido debido la falta de stock del producto 
+https://reports.cucumber.io/reports/e5c9ffc3-8828-4e7b-af59-8b63f70af1a9
+
+
+## 🆕 Modificaciones realizadas
+
+Durante el desarrollo de este proyecto, se realizaron varios modificaciones respecto a la forma estándar mostrada en las grabaciones guía. A continuación, se describen los principales cambios implementados:
+
+### 1. Creación de la clase Element
+Se creó la clase Element en el paquete pages, que encapsula la información necesaria para identificar un elemento web. Esta clase permite definir un tipo de localizador (como id, xpath, cssSelector, etc.) y su valor, mejorando la organización y reutilización del código en los Page Object.
+
+### 2. Cambio en los escenarios Gherkin (AmazonSearch.feature)
+
+Se agregó un Scenario Outline en el archivo AmazonSearch.feature que permite parametrizar la búsqueda de productos y la cantidad deseada antes de agregarlos al carrito.
+
+La parametrización se realiza mediante la sección Examples, lo que permite ejecutar el mismo escenario con distintos valores de entrada, como el nombre del producto y la cantidad de unidades.
+
+### 3. Creación de la carpeta utils y configuración de reportes con ExtentReports
+Se implementó una carpeta utils que contiene clases utilitarias para generar reportes automáticos con ExtentReports. Por cada caso de prueba ejecutado, se genera un archivo HTML dentro de la carpeta reports, el cual incluye la fecha y hora de ejecución, así como el resultado del test (pasado o fallido), pasos ejecutados y captura de pantalla mostrando resultado final.
+
 ### 📁 Estructura del Proyecto
 ```text
 CarritoComprasAmazon/
