@@ -1,17 +1,11 @@
 package pages;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeoutException;
-import java.util.ArrayList;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import io.cucumber.java.ro.Si;
+
+
 
 // Clase que representa la pagina de busqueda de Amazon
 public class AmazonSearchPage extends BasePage {
